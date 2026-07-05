@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrishna | Elegant Women's Fashion</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Icons & Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Mega Menu -->
+    <nav class="navbar sticky">
+        <div class="logo">VRISHNA</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Sarees</a></li>
+            <li><a href="shop.html">Kurtis</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-heart"></i>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-circles">
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>DISCOVER YOUR STYLE</h1>
+            <p>Elegant. Confident. Beautiful.</p>
+            <a href="shop.html" class="btn-primary">SHOP NEW COLLECTION</a>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="categories container">
+        <h2 class="section-title">The Collections</h2>
+        <div class="category-grid">
+            <div class="cat-card" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80" alt="Sarees">
+                <div class="overlay"><span>Sarees</span></div>
+            </div>
+            <div class="cat-card" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Lehengas">
+                <div class="overlay"><span>Lehengas</span></div>
+            </div>
+            <div class="cat-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Kurtis">
+                <div class="overlay"><span>Kurtis</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating -->
+    <a href="https://wa.me/YOURNUMBER" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
