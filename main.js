@@ -1,39 +1,24 @@
-// Simple Cart Logic
-let cartCount = 0;
-const cartDisplay = document.getElementById('cart-count');
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('.main-nav');
 
-function addToCart() {
-    cartCount++;
-    cartDisplay.innerText = cartCount;
-    showToast("Added to your bag!");
-}
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    menuToggle.textContent = isOpen ? '×' : '☰';
+  });
 
-// Search Toggle
-const searchBtn = document.getElementById('search-btn');
-if (searchBtn) {
-    searchBtn.addEventListener('click', () => {
-        const query = prompt("What are you looking for today?");
-        if (query) alert("Searching for: " + query);
+  mainNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation');
+      menuToggle.textContent = '☰';
     });
+  });
 }
 
-// Toast Notification
-function showToast(message) {
-    const toast = document.createElement('div');
-    toast.style.cssText = `
-        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-        background: #222; color: #fff; padding: 12px 25px; border-radius: 30px;
-        z-index: 2000; transition: 0.5s; font-size: 0.9rem;
-    `;
-    toast.innerText = message;
-    document.body.appendChild(toast);
-    setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 3000);
-}
-
-// Parallax Effect on Hero
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero-content');
-    if (!hero) return;
-    const offset = window.pageYOffset;
-    hero.style.transform = `translateY(${offset * 0.4}px)`;
+document.querySelectorAll('[data-year]').forEach((element) => {
+  element.textContent = new Date().getFullYear();
 });
